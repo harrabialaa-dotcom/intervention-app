@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.105.1",
+    "@types/nodemailer": "^8.0.0",
+    "@types/pdfkit": "^0.17.6",
+    "@types/uuid": "^10.0.0",
     "next": "16.2.4",
+    "nodemailer": "^8.0.7",
+    "pdfkit": "^0.18.0",
+    "pdfkit-table": "^0.1.99",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

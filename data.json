@@ -1,0 +1,564 @@
+{
+  "requests": [
+    {
+      "id": "4f7ac553-4395-4efe-ba1c-13c8affa8da6",
+      "subcontractor": "KEYWARE",
+      "section": "IT",
+      "date": "2026-05-04",
+      "time": "10",
+      "accompanying": "ALAA",
+      "reason": "NA",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Approved",
+      "createdAt": "2026-05-02T13:17:25.950Z",
+      "approvals": {
+        "HSE": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:18:59.532Z"
+        },
+        "RH": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:19:01.339Z"
+        },
+        "Direction": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:19:04.349Z"
+        },
+        "Demandeur": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:18:53.986Z"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:18:55.323Z"
+        }
+      }
+    },
+    {
+      "id": "35e95d9a-e975-41c7-9c18-0acc9a4d9cf9",
+      "subcontractor": "aze",
+      "section": "azeza",
+      "date": "2026-05-09",
+      "time": "eaze",
+      "accompanying": "aze",
+      "reason": "zae",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:24:10.007Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "TAVTPY"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "T5116B"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "B8YILP"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "KCL7GJ"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "PAQEJ2"
+        }
+      }
+    },
+    {
+      "id": "202f6626-f887-45b4-9e73-fae6718ecb94",
+      "subcontractor": "azeza",
+      "section": "zaea",
+      "date": "2026-05-07",
+      "time": "aeza",
+      "accompanying": "zaezae",
+      "reason": "zaeza",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:26:59.280Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "B7LKVZ"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "0G745T"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "YEZCZZ"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "BCSMA0"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "EHLKSE"
+        }
+      }
+    },
+    {
+      "id": "bc6b01da-ff27-43df-bfa7-f5edd4002a4c",
+      "subcontractor": "azea",
+      "section": "zaeza",
+      "date": "2026-05-21",
+      "time": "zaeza",
+      "accompanying": "zaeza",
+      "reason": "azaeza",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:30:40.764Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "TVOKUC"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "7KRHNY"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "J0JNWF"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "DRZXS2"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "MHBF3H"
+        }
+      }
+    },
+    {
+      "id": "2c85467f-90d5-4e2a-a7f8-c6fdce8fee4d",
+      "subcontractor": "aeza",
+      "section": "zaeza",
+      "date": "2026-05-09",
+      "time": "aezza",
+      "accompanying": "aezae",
+      "reason": "zaeza",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:36:16.720Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "U84MKW"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "75FJZQ"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "TXRVG8"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "2W6NH9"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "29TNYT"
+        }
+      }
+    },
+    {
+      "id": "27438033-7d09-4503-9d33-301be9f56d4e",
+      "subcontractor": "aze",
+      "section": "zaeza",
+      "date": "2026-05-29",
+      "time": "azeza",
+      "accompanying": "azeza",
+      "reason": "azeza",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:39:28.695Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "ETJV79"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "2RIZB6"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "SP2RTJ"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "8Y80DK"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "KPOFM1"
+        }
+      }
+    },
+    {
+      "id": "b24978aa-5b61-4398-abc5-a403881fd4c6",
+      "subcontractor": "aezae",
+      "section": "zaeza",
+      "date": "2026-05-16",
+      "time": "azeza",
+      "accompanying": "zae",
+      "reason": "zaeza",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:49:33.002Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "RN8CN9"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "78ZXM8"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "4LH995"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "RGT6J9"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:51:31.313Z",
+          "secretCode": "PYD2UU"
+        }
+      }
+    },
+    {
+      "id": "d36ba130-fdf3-4f20-a31b-21279db5d9f5",
+      "subcontractor": "aaa",
+      "section": "aaa",
+      "date": "2026-05-15",
+      "time": "aa",
+      "accompanying": "aa",
+      "reason": "aa",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T13:58:42.715Z",
+      "approvals": {
+        "HSE": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:00:25.360Z",
+          "secretCode": "2ABH9O"
+        },
+        "RH": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:00:30.474Z",
+          "secretCode": "4RE7AK"
+        },
+        "Direction": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:00:37.848Z",
+          "secretCode": "BQ335A"
+        },
+        "Demandeur": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "FWCMZ6"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T13:59:02.382Z",
+          "secretCode": "NQLWWW"
+        }
+      }
+    },
+    {
+      "id": "641d58cd-0196-4e25-bba0-c878adf164c0",
+      "subcontractor": "test",
+      "section": "test",
+      "date": "2026-05-16",
+      "time": "test",
+      "accompanying": "test",
+      "reason": "test",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Approved",
+      "createdAt": "2026-05-02T14:05:29.940Z",
+      "approvals": {
+        "HSE": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:06:36.480Z",
+          "secretCode": "5KBK0B"
+        },
+        "RH": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:06:41.364Z",
+          "secretCode": "PHK73X"
+        },
+        "Direction": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:11:33.315Z",
+          "secretCode": "D9FATQ"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:06:00.112Z",
+          "secretCode": "5YGCTP"
+        }
+      }
+    },
+    {
+      "id": "22919393-5722-4a25-922a-1a8c53323560",
+      "subcontractor": "final-test",
+      "section": "final-test",
+      "date": "2026-05-15",
+      "time": "10h",
+      "accompanying": "final-test",
+      "reason": "final-test",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Approved",
+      "createdAt": "2026-05-02T14:20:23.912Z",
+      "approvals": {
+        "HSE": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:22:01.932Z",
+          "secretCode": "UQR5XA"
+        },
+        "RH": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:22:06.881Z",
+          "secretCode": "8X23XP"
+        },
+        "Direction": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:22:11.149Z",
+          "secretCode": "S924P6"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:20:53.839Z",
+          "secretCode": "7BEPS9"
+        }
+      }
+    },
+    {
+      "id": "f2083e68-561c-4d0d-8a42-f2110d632c52",
+      "subcontractor": "test",
+      "section": "test",
+      "date": "2026-05-29",
+      "time": "10",
+      "accompanying": "test",
+      "reason": "test",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Approved",
+      "createdAt": "2026-05-02T14:34:13.468Z",
+      "approvals": {
+        "HSE": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:35:14.964Z",
+          "secretCode": "YHCG5P"
+        },
+        "RH": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:35:20.821Z",
+          "secretCode": "OG1FJZ"
+        },
+        "Direction": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:35:25.516Z",
+          "secretCode": "VOPRK7"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:34:46.246Z",
+          "secretCode": "HCE8JG"
+        }
+      }
+    },
+    {
+      "id": "fe21b219-d68c-48e1-b2cb-5b45e7c17c4e",
+      "subcontractor": "test",
+      "section": "test",
+      "date": "2026-05-20",
+      "time": "09",
+      "accompanying": "aaa",
+      "reason": "aaaa",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T14:40:43.746Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "W8S121"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "YLM6MX"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "775JMZ"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T14:40:57.843Z",
+          "secretCode": "XM6WEK"
+        }
+      }
+    },
+    {
+      "id": "b87685e5-e584-49c4-99ec-b5143eceddd3",
+      "subcontractor": "test",
+      "section": "test",
+      "date": "2026-05-21",
+      "time": "10h",
+      "accompanying": "aa",
+      "reason": "aa",
+      "demandeurEmail": "alaa.harrabi@aleo.com",
+      "n1Email": "alaa.harrabi@aleo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T14:42:49.879Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "XO5A89"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "CB36GY"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "Q32T2T"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "4RIMH1"
+        }
+      }
+    },
+    {
+      "id": "3a7915a9-22b2-4b80-8f31-aaee200d62db",
+      "subcontractor": "test",
+      "section": "test",
+      "date": "2026-05-20",
+      "time": "10h",
+      "accompanying": "test",
+      "reason": "test",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T18:01:44.182Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "N0LA5G"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "O1TUUP"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "VV7Z3X"
+        },
+        "N1": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "G1QD4U"
+        }
+      }
+    },
+    {
+      "id": "2e2c1a6f-7cec-4870-abe4-76e197668ec0",
+      "subcontractor": "TEST",
+      "section": "TEST",
+      "date": "2026-05-21",
+      "time": "TEST",
+      "accompanying": "TEST",
+      "reason": "TEST",
+      "demandeurEmail": "alaa.harrabi@valeo.com",
+      "n1Email": "alaa.harrabi@valeo.com",
+      "status": "Pending",
+      "createdAt": "2026-05-02T18:04:19.026Z",
+      "approvals": {
+        "HSE": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "AVNNVB"
+        },
+        "RH": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "WWT68J"
+        },
+        "Direction": {
+          "status": "Pending",
+          "approvedAt": null,
+          "secretCode": "E5Y05I"
+        },
+        "N1": {
+          "status": "Approved",
+          "approvedAt": "2026-05-02T18:05:30.480Z",
+          "secretCode": "CIU4YX"
+        }
+      }
+    }
+  ]
+}
