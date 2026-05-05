@@ -10,7 +10,7 @@ export async function GET() {
 
 const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
 
-export async function POST(request) {
+export async function POST(request: Request) {
   try {
     const body = await request.json();
     const newRequest = {
