@@ -6,15 +6,15 @@ let transporter: nodemailer.Transporter | null = null;
 export async function getMailTransporter() {
   if (transporter) return transporter;
 
-  transporter = nodemailer.createTransport({
-    host: "ARO1-SV00372.vnet.valeo.com",
-    port: 25, 
-    secure: false, 
-    ignoreTLS: true,
-    name: "vnet.valeo.com", 
-    debug: true, 
-    logger: true 
-  });
+transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  }
+});
 
   return transporter;
 }
