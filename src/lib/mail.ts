@@ -23,7 +23,7 @@ export async function sendApprovalEmail(to: string, roleLabel: string, code: str
   const mailer = await getMailTransporter();
   
   const info = await mailer.sendMail({
-    from: '"Valeo Tracking Involvement" <no-reply@sendgrid.com>',
+    from: '"Valeo Tracking Involvement" <harrabialaa@gmail.com>',
     to: to,
     subject: `Action Required: Intervention Approval - ${requestDetails.subcontractor}`,
     text: `Hello,\n\nA new intervention request requires your approval (${roleLabel}).\n\nTo validate this request, please enter the following secret PIN:\n\nSECRET PIN: ${code}`,
@@ -163,7 +163,7 @@ export async function sendFinalPDFEmail(to: string, requestDetails: any) {
   });
 
   const info = await mailer.sendMail({
-    from: '"Valeo Tracking Involvement" <no-reply@sendgrid.com>',
+    from: '"Valeo Tracking Involvement" <harrabialaa@gmail.com>',
     to: to,
     subject: `Intervention Approved - ${requestDetails.subcontractor}`,
     text: `Hello,\n\nThe intervention has been validated by all stakeholders.\n\nPlease find attached the official intervention authorization PDF.\n\nBest regards,\nValeo IT Team.`,
