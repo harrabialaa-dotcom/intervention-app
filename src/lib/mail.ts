@@ -88,12 +88,16 @@ export async function sendFinalPDFEmail(to: string, requestDetails: any) {
 
     (async () => {
       try {
+        const requesterText = `Requester: ${requestDetails.demandeurEmail}`;
+        doc.font("Helvetica-Bold").fontSize(12).fillColor('#0f172a')
+           .text(requesterText, 30, 30, { align: 'left' });
+
         if (logoBuffer) {
-          doc.image(logoBuffer, 30, 30, { width: 100 });
+          doc.image(logoBuffer, 30, 55, { width: 100 });
         }
         
         doc.font("Helvetica-Bold").fontSize(14).fillColor('#000000')
-           .text('Special Authorization N°........', 0, 40, { align: 'center' });
+           .text('Special Authorization N°........', 0, 90, { align: 'center' });
         
         doc.moveDown(4);
 
