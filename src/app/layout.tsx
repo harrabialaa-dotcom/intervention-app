@@ -15,9 +15,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="site-wrapper">
-          <header>
-            <h1 className="hero-title">Request for an <span>Involvement</span></h1>
-            <p className="hero-subtitle">to get an authorization</p>
+          <header className="hero-section">
+            <div className="hero-content">
+              <h1 className="hero-title">Request for an Involvement</h1>
+              <p className="hero-subtitle">Digital Authorization System</p>
+            </div>
           </header>
           
           <div className="app-container">
@@ -26,8 +28,6 @@ export default function RootLayout({
                 <img src="/logo2.png" alt="Valeo" className="nav-logo" />
               </div>
               <div className="nav-bottom">
-                <span>IT Department</span>
-                <span>Interventions</span>
                 <span>Authorizations</span>
               </div>
             </nav>

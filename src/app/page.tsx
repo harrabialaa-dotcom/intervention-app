@@ -19,18 +19,21 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-        <h2 style={{ margin: 0, fontSize: '1.875rem' }}>Dashboard</h2>
+      <div className="dashboard-header">
+        <h2 className="dashboard-title">Dashboard</h2>
         <Link href="/create" className="btn btn-primary">
-          + New Request
+          <span>+</span> New Request
         </Link>
       </div>
 
-      <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+      <div className="card">
         {loading ? (
-          <p style={{ padding: '2rem', textAlign: 'center' }}>Loading...</p>
+          <div className="loading-state">
+            <div className="loading-spinner"></div>
+            <p>Loading requests...</p>
+          </div>
         ) : (
-          <div style={{ overflowX: 'auto' }}>
+          <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -44,7 +47,7 @@ export default function Home() {
               <tbody>
                 {requests.map(req => (
                   <tr key={req.id}>
-                    <td style={{ fontWeight: 500 }}>{req.subcontractor}</td>
+                    <td className="subcontractor-cell">{req.subcontractor}</td>
                     <td>{req.section}</td>
                     <td>{req.date}</td>
                     <td>
@@ -53,7 +56,7 @@ export default function Home() {
                       </span>
                     </td>
                     <td>
-                      <Link href={`/request/${req.id}`} style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'none' }}>
+                      <Link href={`/request/${req.id}`} className="action-link">
                         View Details →
                       </Link>
                     </td>
@@ -61,8 +64,12 @@ export default function Home() {
                 ))}
                 {requests.length === 0 && (
                   <tr>
-                    <td colSpan={5} style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-secondary)' }}>
-                      No requests found. Create a new one to get started.
+                    <td colSpan={5} className="empty-state">
+                      <div className="empty-content">
+                        <div className="empty-icon">📋</div>
+                        <h3>No requests found</h3>
+                        <p>Create a new request to get started with the authorization process.</p>
+                      </div>
                     </td>
                   </tr>
                 )}

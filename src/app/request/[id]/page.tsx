@@ -47,8 +47,26 @@ export default function RequestDetail(props: { params: Promise<{ id: string }> }
     setApproving(null);
   };
 
-  if (loading) return <div className="container"><p>Loading...</p></div>;
-  if (!req) return <div className="container"><p>Request not found.</p></div>;
+  if (loading) return (
+    <div className="container">
+      <div className="loading-state">
+        <div className="loading-spinner"></div>
+        <p>Loading request details...</p>
+      </div>
+    </div>
+  );
+  
+  if (!req) return (
+    <div className="container">
+      <div className="empty-state">
+        <div className="empty-content">
+          <div className="empty-icon">🔍</div>
+          <h3>Request not found</h3>
+          <p>The requested intervention could not be found.</p>
+        </div>
+      </div>
+    </div>
+  );
 
   const roles = [
     { id: 'N1', label: 'N+1 Manager', email: req.n1Email },
@@ -58,78 +76,118 @@ export default function RequestDetail(props: { params: Promise<{ id: string }> }
   ];
 
   return (
-    <div className="container" style={{ maxWidth: '900px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-        <h2 style={{ margin: 0, fontSize: '1.875rem' }}>Intervention Details</h2>
-        <button onClick={() => router.back()} className="btn" style={{ border: '1px solid var(--border-color)', background: 'white', color: 'var(--text-main)' }}>← Back</button>
+    <div className="container request-detail-container">
+      <div className="page-header">
+        <h2 className="page-title">Intervention Details</h2>
+        <button onClick={() => router.back()} className="btn btn-secondary back-btn">
+          ← Review dashboard
+        </button>
       </div>
 
-      <div className="card">
-        <h3 style={{ margin: '0 0 1.5rem 0', color: 'var(--primary-color)', fontSize: '1.25rem' }}>General Information</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', fontSize: '0.95rem' }}>
-          <div><strong style={{ color: 'var(--text-secondary)' }}>Subcontractor:</strong><br/> {req.subcontractor}</div>
-          <div><strong style={{ color: 'var(--text-secondary)' }}>Section/Service:</strong><br/> {req.section}</div>
-          <div><strong style={{ color: 'var(--text-secondary)' }}>Date:</strong><br/> {req.date}</div>
-          <div><strong style={{ color: 'var(--text-secondary)' }}>Time:</strong><br/> {req.time}</div>
-          <div style={{ gridColumn: '1 / -1' }}><strong style={{ color: 'var(--text-secondary)' }}>Accompanying Person:</strong><br/> {req.accompanying || 'None'}</div>
-          <div style={{ gridColumn: '1 / -1' }}><strong style={{ color: 'var(--text-secondary)' }}>Reason:</strong><br/> {req.reason}</div>
+      <div className="card info-card">
+        <h3 className="card-title">General Information</h3>
+        <div className="info-grid">
+          <div className="info-item">
+            <span className="info-label">Subcontractor:</span>
+            <span className="info-value">{req.subcontractor}</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Section/Service:</span>
+            <span className="info-value">{req.section}</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Date:</span>
+            <span className="info-value">{req.date}</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Time:</span>
+            <span className="info-value">{req.time}</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Status:</span>
+            <span className={`badge ${req.status === 'Approved' ? 'badge-approved' : 'badge-pending'}`}>
+              {req.status === 'Approved' ? '✓ Approved' : '⏳ Pending'}
+            </span>
+          </div>
+          <div className="info-item full-width">
+            <span className="info-label">Accompanying Person:</span>
+            <span className="info-value">{req.accompanying || 'None'}</span>
+          </div>
+          <div className="info-item full-width">
+            <span className="info-label">Reason:</span>
+            <span className="info-value">{req.reason}</span>
+          </div>
         </div>
       </div>
 
-      <h3 style={{ marginBottom: '1rem', marginTop: '2rem', fontSize: '1.25rem' }}>Approval Workflow</h3>
-      
-      {errorMsg && (
-        <div style={{ padding: '1rem', backgroundColor: '#fee2e2', color: 'var(--danger-color)', borderRadius: 'var(--radius)', border: '1px solid #fca5a5', marginBottom: '1.5rem' }}>
-          {errorMsg}
-        </div>
-      )}
+      <div className="workflow-section">
+        <h3 className="section-title">Approval Workflow</h3>
+        
+        {errorMsg && (
+          <div className="error-message">
+            <span className="error-icon">⚠️</span>
+            {errorMsg}
+          </div>
+        )}
 
-      <div style={{ display: 'grid', gap: '1rem' }}>
-        {roles.map(role => {
-          const approval = req.approvals[role.id as keyof typeof req.approvals];
-          const isApproved = approval?.status === 'Approved';
-          
-          return (
-            <div key={role.id} className="card" style={{ marginBottom: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', padding: '1.5rem' }}>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1.1rem' }}>{role.label}</h4>
-                <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-                  {role.email}
-                  {isApproved && <span style={{ display: 'block', color: 'var(--success-color)', marginTop: '0.25rem', fontWeight: 500 }}>Approved on {new Date(approval.approvedAt!).toLocaleString()}</span>}
-                </p>
+        <div className="approval-cards">
+          {roles.map(role => {
+            const approval = req.approvals[role.id as keyof typeof req.approvals];
+            const isApproved = approval?.status === 'Approved';
+            
+            return (
+              <div key={role.id} className={`approval-card ${isApproved ? 'approved' : 'pending'}`}>
+                <div className="approval-info">
+                  <h4 className="role-title">{role.label}</h4>
+                  <p className="role-email">{role.email}</p>
+                  {isApproved && (
+                    <p className="approval-date">
+                      ✓ Approved on {new Date(approval.approvedAt!).toLocaleString()}
+                    </p>
+                  )}
+                </div>
+                <div className="approval-actions">
+                  {isApproved ? (
+                    <span className="badge badge-approved">✓ Approved</span>
+                  ) : (
+                    <div className="approval-form">
+                      <input 
+                        type="text" 
+                        placeholder="Secret PIN" 
+                        className="form-input pin-input"
+                        value={codes[role.id] || ''}
+                        onChange={e => setCodes({...codes, [role.id]: e.target.value})}
+                      />
+                      <button 
+                        onClick={() => handleApprove(role.id)} 
+                        className="btn btn-primary validate-btn"
+                        disabled={approving === role.id || !codes[role.id]}
+                      >
+                        {approving === role.id ? (
+                          <>
+                            <div className="btn-spinner"></div>
+                            Verifying...
+                          </>
+                        ) : (
+                          'Validate'
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
-              <div>
-                {isApproved ? (
-                  <span className="badge badge-approved" style={{ padding: '0.6rem 1.2rem', fontSize: '0.875rem' }}>✓ Approved</span>
-                ) : (
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <input 
-                      type="text" 
-                      placeholder="Secret PIN" 
-                      className="form-input" 
-                      style={{ width: '130px' }}
-                      value={codes[role.id] || ''}
-                      onChange={e => setCodes({...codes, [role.id]: e.target.value})}
-                    />
-                    <button 
-                      onClick={() => handleApprove(role.id)} 
-                      className="btn btn-primary"
-                      disabled={approving === role.id || !codes[role.id]}
-                    >
-                      {approving === role.id ? 'Verifying...' : 'Validate'}
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
       
       {req.status === 'Approved' && (
-        <div className="card" style={{ marginTop: '2rem', backgroundColor: '#ecfdf5', borderColor: '#a7f3d0', textAlign: 'center', padding: '2rem' }}>
-          <h2 style={{ color: 'var(--success-color)', margin: 0, fontSize: '1.5rem' }}>🎉 Intervention Fully Approved</h2>
-          <p style={{ color: '#047857', margin: '0.5rem 0 0 0' }}>The official authorization PDF has been sent to the requester's email.</p>
+        <div className="success-card">
+          <div className="success-content">
+            <div className="success-icon">🎉</div>
+            <h2>Intervention Fully Approved</h2>
+            <p>The official authorization PDF has been sent to the requester's email.</p>
+          </div>
         </div>
       )}
     </div>
