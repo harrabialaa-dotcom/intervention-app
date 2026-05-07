@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Request } from '@/lib/db';
 
+const isExpiredRequest = (request: Request) => {
+  if (request.status === 'Approved') return false;
+  const expirationDate = new Date(request.createdAt).getTime() + 7 * 24 * 60 * 60 * 1000;
+  return Date.now() > expirationDate;
+};
+
 export default function Home() {
   const [requests, setRequests] = useState<Request[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,6 +23,9 @@ export default function Home() {
       });
   }, []);
 
+  const visibleRequests = requests.filter(req => !isExpiredRequest(req));
+  const expiredCount = requests.filter(req => isExpiredRequest(req)).length;
+
   return (
     <div className="container">
       <div className="dashboard-header">
@@ -25,6 +34,14 @@ export default function Home() {
           <span>+</span> New Request
         </Link>
       </div>
+
+      {expiredCount > 0 && !loading && (
+        <div className="info-banner">
+          <p>
+            {expiredCount} pending request{expiredCount === 1 ? '' : 's'} older than 7 days are hidden from the dashboard automatically.
+          </p>
+        </div>
+      )}
 
       <div className="card">
         {loading ? (
@@ -45,7 +62,7 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                {requests.map(req => (
+                {visibleRequests.map(req => (
                   <tr key={req.id}>
                     <td className="subcontractor-cell">{req.subcontractor}</td>
                     <td>{req.section}</td>
@@ -62,7 +79,7 @@ export default function Home() {
                     </td>
                   </tr>
                 ))}
-                {requests.length === 0 && (
+                {visibleRequests.length === 0 && (
                   <tr>
                     <td colSpan={5} className="empty-state">
                       <div className="empty-content">

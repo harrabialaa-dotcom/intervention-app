@@ -21,12 +21,14 @@ transporter = nodemailer.createTransport({
 
 export async function sendApprovalEmail(to: string, roleLabel: string, code: string, requestDetails: any) {
   const mailer = await getMailTransporter();
+  const appUrl = process.env.APP_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+  const requestUrl = `${appUrl}/request/${requestDetails.id}`;
   
   const info = await mailer.sendMail({
     from: '"Valeo Tracking Involvement" <harrabialaa@gmail.com>',
     to: to,
     subject: `Action Required: Intervention Approval - ${requestDetails.subcontractor}`,
-    text: `Hello,\n\nA new intervention request requires your approval (${roleLabel}).\n\nTo validate this request, please enter the following secret PIN:\n\nSECRET PIN: ${code}`,
+    text: `Hello,\n\nA new intervention request requires your approval (${roleLabel}).\n\nTo validate this request, please enter the following secret PIN:\n\nSECRET PIN: ${code}\n\nOpen the request here: ${requestUrl}`,
     html: `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
         <div style="background-color: #6cc04a; color: white; padding: 20px; text-align: center;">
@@ -54,7 +56,12 @@ export async function sendApprovalEmail(to: string, roleLabel: string, code: str
               ${code}
             </span>
           </div>
+
+          <div style="text-align: center; margin-bottom: 30px;">
+            <a href="${requestUrl}" style="display: inline-block; text-decoration: none; background: #6cc04a; color: #ffffff; padding: 14px 26px; border-radius: 10px; font-weight: 700;">Open this intervention and enter the code</a>
+          </div>
           
+          <p style="font-size: 14px; color: #64748b; margin-top: 10px;">This link opens the specific intervention only.</p>
           <p style="font-size: 14px; color: #64748b; margin-top: 30px;">Best regards,<br/>Valeo IT Team.</p>
         </div>
       </div>

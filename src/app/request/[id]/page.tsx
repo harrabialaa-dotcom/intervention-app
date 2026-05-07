@@ -68,12 +68,30 @@ export default function RequestDetail(props: { params: Promise<{ id: string }> }
     </div>
   );
 
+  const isExpired = req.status !== 'Approved' && new Date(req.createdAt).getTime() + 7 * 24 * 60 * 60 * 1000 < Date.now();
   const roles = [
     { id: 'N1', label: 'N+1 Manager', email: req.n1Email },
     { id: 'HSE', label: 'HSE Department', email: 'khalifa.lassoued@valeo.com' },
     { id: 'RH', label: 'HR Department', email: 'sonia.rouatbi@valeo.com' },
     { id: 'Direction', label: 'Plant Director', email: 'bilel.belhaj-amor@valeo.com' },
   ];
+
+  if (isExpired) {
+    return (
+      <div className="container">
+        <div className="empty-state">
+          <div className="empty-content">
+            <div className="empty-icon">⌛</div>
+            <h3>Intervention expired</h3>
+            <p>This intervention request was not validated within 7 days and is no longer available in the interface.</p>
+            <button onClick={() => router.push('/')} className="btn btn-primary">
+              Back to Dashboard
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container request-detail-container">
