@@ -101,12 +101,22 @@ export async function sendFinalPDFEmail(to: string, requestDetails: any) {
 
         if (logoBuffer) {
           doc.image(logoBuffer, 30, 55, { width: 100 });
+        } else {
+          doc.font('Helvetica-Bold').fontSize(12).fillColor('#334155')
+             .text('Valeo Tracking Involvement', 30, 55);
         }
         
         doc.font("Helvetica-Bold").fontSize(14).fillColor('#000000')
            .text('Special Authorization N°........', 0, 90, { align: 'center' });
+
+        doc.moveDown(0.5);
+        doc.save();
+        doc.fillColor('#057a55').opacity(0.15).roundedRect(180, 110, 240, 36, 8).fill();
+        doc.opacity(1).fillColor('#057a55').font('Helvetica-Bold').fontSize(18)
+           .text('✓ APPROVED', 0, 118, { align: 'center' });
+        doc.restore();
         
-        doc.moveDown(4);
+        doc.moveDown(3);
 
         const infoTable = {
           headers: [

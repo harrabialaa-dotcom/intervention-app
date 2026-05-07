@@ -97,7 +97,7 @@ export default function RequestDetail(props: { params: Promise<{ id: string }> }
     <div className="container request-detail-container">
       <div className="page-header">
         <h2 className="page-title">Intervention Details</h2>
-        <button onClick={() => router.back()} className="btn btn-secondary back-btn">
+        <button onClick={() => router.push('/')} className="btn btn-secondary back-btn">
           ← Review dashboard
         </button>
       </div>
@@ -121,12 +121,6 @@ export default function RequestDetail(props: { params: Promise<{ id: string }> }
             <span className="info-label">Time:</span>
             <span className="info-value">{req.time}</span>
           </div>
-          <div className="info-item">
-            <span className="info-label">Status:</span>
-            <span className={`badge ${req.status === 'Approved' ? 'badge-approved' : 'badge-pending'}`}>
-              {req.status === 'Approved' ? '✓ Approved' : '⏳ Pending'}
-            </span>
-          </div>
           <div className="info-item full-width">
             <span className="info-label">Accompanying Person:</span>
             <span className="info-value">{req.accompanying || 'None'}</span>
@@ -134,6 +128,12 @@ export default function RequestDetail(props: { params: Promise<{ id: string }> }
           <div className="info-item full-width">
             <span className="info-label">Reason:</span>
             <span className="info-value">{req.reason}</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Status:</span>
+            <span className={`badge ${req.status === 'Approved' ? 'badge-approved' : 'badge-pending'}`}>
+              {req.status === 'Approved' ? '✓ Approved' : '⏳ Pending'}
+            </span>
           </div>
         </div>
       </div>

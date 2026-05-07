@@ -113,8 +113,8 @@ export default function CreateRequest() {
     n1Email: ''
   });
 
-  const clockHours = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  const minuteOptions = [0, 15, 30, 45];
+  const hourOptions = Array.from({ length: 24 }, (_, index) => index);
+  const minuteOptions = Array.from({ length: 60 }, (_, index) => index);
 
   const selectedTime = `${selectedHour.toString().padStart(2, '0')}:${selectedMinute.toString().padStart(2, '0')}`;
 
@@ -195,32 +195,43 @@ export default function CreateRequest() {
 
           <div className="form-group">
             <label className="form-label">Time *</label>
-            <div className="clock-picker">
-              <div className="clock-face">
-                {clockHours.map((hour, index) => (
-                  <button
-                    key={hour}
-                    type="button"
-                    className={`clock-hour ${selectedHour === hour ? 'active' : ''}`}
-                    style={{ '--rotate': `${index * 30}deg` } as React.CSSProperties}
-                    onClick={() => updateSelectedTime(hour, selectedMinute)}
-                  >
-                    {hour}
-                  </button>
-                ))}
-                <div className="clock-center">{selectedTime}</div>
+            <div className="time-selector">
+              <div className="time-display">
+                <span className="time-value">{selectedTime}</span>
+                <span className="time-icon">🕒</span>
               </div>
-              <div className="minute-picker">
-                {minuteOptions.map(minute => (
-                  <button
-                    key={minute}
-                    type="button"
-                    className={`minute-chip ${selectedMinute === minute ? 'active' : ''}`}
-                    onClick={() => updateSelectedTime(selectedHour, minute)}
-                  >
-                    {minute.toString().padStart(2, '0')}
-                  </button>
-                ))}
+              <div className="time-columns">
+                <div className="time-column">
+                  <span className="time-column-label">Hour</span>
+                  <div className="time-scroll">
+                    {hourOptions.map(hour => (
+                      <button
+                        key={hour}
+                        type="button"
+                        className={`time-option ${selectedHour === hour ? 'active' : ''}`}
+                        onClick={() => updateSelectedTime(hour, selectedMinute)}
+                      >
+                        {hour.toString().padStart(2, '0')}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="time-column">
+                  <span className="time-column-label">Minute</span>
+                  <div className="time-scroll">
+                    {minuteOptions.map(minute => (
+                      <button
+                        key={minute}
+                        type="button"
+                        className={`time-option ${selectedMinute === minute ? 'active' : ''}`}
+                        onClick={() => updateSelectedTime(selectedHour, minute)}
+                      >
+                        {minute.toString().padStart(2, '0')}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
               <input type="hidden" name="time" value={formData.time} />
             </div>
